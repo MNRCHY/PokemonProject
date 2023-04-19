@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Logo from '../assets/Logo.webp'
+import pokeSample from '../assets/poke-sample.webp'
 import Footer from '../components/Footer'
 import { getAllPokemons } from '../redux/actions/pokeActions'
 
@@ -26,7 +27,10 @@ function Pokemon() {
           pokemons.map((pokemon, index) => (
             <div className='bg-green-500 p-2 rounded-sm' key={index}>
               <Link to='/details'>
-              <h1 className='text-white font-semibold'>{pokemon.name}</h1>
+                <div className='bg-white p-1 rounded-sm mb-2'>
+                  <img src={pokeSample}/>
+                </div>
+                <h1 className='text-white font-semibold'>{pokemon.name}</h1>
               </Link>
             </div>
           ))
